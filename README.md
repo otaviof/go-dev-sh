@@ -49,8 +49,4 @@ custom image-tag combination.
 make build GO_DEV_SH_IMAGE_TAG="otaviof/go-dev-sh:latest"
 ```
 
-```bash
-make push GO_DEV_SH_IMAGE_TAG="otaviof/go-dev-sh:latest"
-```
-
 [dockerhub]: https://hub.docker.com/r/otaviof/go-dev-sh
