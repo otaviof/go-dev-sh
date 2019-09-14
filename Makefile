@@ -7,5 +7,8 @@ default: build
 build:
 	docker build --tag=$(IMAGE_TAG) .
 
+push:
+	docker push $(IMAGE_TAG)
+
 install:
 	install -m 755 $(SCRIPT_NAME) $(SCRIPT_INSTALL_DIR)
