@@ -1,5 +1,6 @@
 #!/bin/bash
 
+CUSTOM_GOPATH="/tmp/go-dev-sh/go"
 BASH_DIR="${HOME}/.go-dev-sh/"
 DIR_NAME="$(basename ${PWD})"
 IMAGE_TAG="otaviof/go-dev-sh:latest"
@@ -7,6 +8,7 @@ IMAGE_TAG="otaviof/go-dev-sh:latest"
 exec docker run \
     --interactive \
     --tty \
+    --volume "${CUSTOM_GOPATH}:/go" \
     --volume "${BASH_DIR}:/root/.bash.d" \
     --volume "${PWD}:/src/${DIR_NAME}" \
     --workdir "/src/${DIR_NAME}" \
