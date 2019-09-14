@@ -21,7 +21,7 @@ go-dev-sh
 The directory will be mounted upon `/src` and the working directory will be kept the same inside the
 container.
 
-Export `GO_DEV_SH_IMAGE_TAG` environment variable to use a custom container image/tag.
+Export `GO_DEV_SH_IMAGE_TAG` environment variable to use a custom container image-tag combination.
 
 ## Installing
 
