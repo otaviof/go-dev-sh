@@ -1,0 +1,4 @@
+.git*
+go-dev-sh
+Makefile
+README.md
