@@ -3,7 +3,7 @@
 set -e
 
 # image name and tag
-IMAGE_TAG="otaviof/go-dev-sh:latest"
+GO_DEV_SH_IMAGE_TAG="${GO_DEV_SH_IMAGE_TAG:-otaviof/go-dev-sh:latest}"
 # base directory, where all data will be placed upon
 BASE_DIR="${HOME}/.go-dev-sh"
 # custom GOPATH directory
@@ -18,7 +18,7 @@ CUR_DIR_NAME="$(basename ${PWD})"
 [ -d "${GOPATH_DIR}" ] || mkdir -p "${GOPATH_DIR}"
 [ -d "${BASH_DIR}" ] || mkdir -p "${BASH_DIR}"
 
-echo "# Go devevelopment container for: ${CUR_DIR_NAME} at /src/${CUR_DIR_NAME}"
+echo "# Go development container for: ${CUR_DIR_NAME} at /src/${CUR_DIR_NAME}"
 
 exec docker run \
     --interactive \
@@ -27,4 +27,4 @@ exec docker run \
     --volume "${BASH_DIR}:/root/.bash.d" \
     --volume "${PWD}:/src/${CUR_DIR_NAME}" \
     --workdir "/src/${CUR_DIR_NAME}" \
-    $IMAGE_TAG
+    ${GO_DEV_SH_IMAGE_TAG}
